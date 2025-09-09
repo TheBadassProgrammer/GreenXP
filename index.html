@@ -7,7 +7,6 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="index.css"/>
-
 </head>
 <body>
 
@@ -33,8 +32,9 @@
 </header>
 
 <main class="container">
-  <!-- LEFT -->
+  <!-- LEFT SECTION -->
   <section>
+    <!-- Quiz Section -->
     <div class="green-card" id="quiz">
       <div class="pixel-title" style="font-size:16px">Eco Quiz</div>
       <div class="quiz-bar"><div id="quizProgress"></div></div>
@@ -45,15 +45,16 @@
         <button id="quizNext" class="pixel-btn">Next</button>
       </div>
       <div style="margin-top:6px;font-weight:900" class="pixel-title">Points: <span id="pts">0</span></div>
-      <!-- Panda overlay -->
       <img src="panda.png" alt="Panda" class="overlay-panda">
     </div>
 
+    <!-- Map Section -->
     <div class="map-card" id="impactMap">
       <div class="pixel-title">Impact Map</div>
       <div class="map-preview"><img src="map.png" id="mapImage" style="width:100%;border-radius:12px"></div>
     </div>
 
+    <!-- Impact Section -->
     <div class="impact-card" id="impact">
       <div class="pixel-title">Impact Dashboard</div>
       <div class="impact-stats">
@@ -63,37 +64,60 @@
         <div class="impact-box">🌍 CO₂ t<span id="co2">0</span></div>
       </div>
     </div>
+
+    <!-- Badges Section moved here -->
+    <div class="badges-card" id="badges">
+      <div class="pixel-title">Eco Badges</div>
+      <div class="badges">
+        <div class="badge locked" id="badgeRecycle"><img src="badge_recycle.png"><span>Recycle Hero</span></div>
+        <div class="badge locked" id="badgeWater"><img src="badge_water.png"><span>Water Saver</span></div>
+        <div class="badge locked" id="badgeTree"><img src="badge_tree.png"><span>Tree Planter</span></div>
+        <div class="badge locked" id="badgeEnergy"><img src="badge_energy.png"><span>Energy Saver</span></div>
+        <div class="badge locked" id="badgePlastic"><img src="badge_plastic.png"><span>Plastic-Free</span></div>
+        <div class="badge locked" id="badgeChampion"><img src="badge_champion.png"><span>Eco Champion</span></div>
+      </div>
+    </div>
   </section>
 
-  <!-- RIGHT -->
+  <!-- RIGHT SECTION -->
   <section>
+    <!-- First Game -->
     <div class="hero-yellow" id="game">
       <div class="game-header">
         <div class="pixel-title" style="font-size:14px">PLAY & LEARN</div>
         <div class="btns">
-          <button class="pixel-btn" id="playGame">PLAY</button>
-          <button class="pixel-btn" id="fullscreenBtn">Fullscreen</button>
+          <button class="pixel-btn" id="playGame" style="margin-top: 0;">PLAY</button>
+          <button class="pixel-btn" id="fullscreenBtn" style="margin-top: 0;">Fullscreen</button>
         </div>
       </div>
-      <div class="game-frame"><iframe id="gameIframe" src="https://astonishing-quokka-a9a67f.netlify.app/"></iframe></div>
-      <!-- Groot overlay -->
+      <div class="game-frame">
+        <iframe id="gameIframe" src="https://astonishing-quokka-a9a67f.netlify.app/" width="600" height="450"></iframe>
+      </div>
       <img src="groot.png" alt="Groot" class="overlay-groot">
     </div>
 
+    <!-- Second Game in Separate Division -->
+    <div class="hero-yellow" style="margin-top:20px;">
+      <div class="game-header">
+        <div class="pixel-title" style="font-size:14px">RETRO GAME</div>
+      </div>
+      <div class="game-frame">
+        <iframe src="https://www.retrogames.cc/embed/20435-zen-intergalactic-ninja-usa.html" width="600" height="450" frameborder="no" allowfullscreen="true" webkitallowfullscreen="true" mozallowfullscreen="true" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <!-- Plant Section -->
     <div class="blue-card" id="plant">
       <div class="pixel-title">Plant Verification</div>
       <div class="upload-grid">
-        <div class="upload-box">
-          <div>Before</div>
-          <input type="file" id="before">
-          <img id="prevBefore" src="tree.png">
-        </div>
+        <div class="upload-box"><div>Before</div><input type="file" id="before"><img id="prevBefore" src="tree.png"></div>
         <div class="upload-box"><div>After</div><input type="file" id="after"><img id="prevAfter" src="tree.png"></div>
         <button class="pixel-btn" id="runVerify">Run verification</button>
         <div id="verifyResult" style="margin-top:10px; color:white; font-weight:bold;"></div>
       </div>
     </div>
 
+    <!-- Leaderboard Section -->
     <div class="side-grid">
       <div class="leaderboard-card" id="leaderboard">
         <div class="pixel-title">Top Classes</div>
@@ -104,6 +128,7 @@
         </ol>
       </div>
 
+      <!-- Challenges Section -->
       <div class="challenges-card" id="challenges">
         <div class="pixel-title">Daily Eco Challenge</div>
         <div class="challenge-item"><input type="checkbox" class="challenge" data-pts="20">Bring a reusable bottle</div>
@@ -111,26 +136,8 @@
         <div class="challenge-item"><input type="checkbox" class="challenge" data-pts="50">Plant a seed today</div>
       </div>
     </div>
-
-    <div class="badges-card" id="badges">
-      <div class="pixel-title">Eco Badges</div>
-      <div class="badges">
-        <div class="badge locked" id="badgeRecycle"><img src="badge_recycle.png"><span>Recycle Hero</span></div>
-        <div class="badge locked" id="badgeWater"><img src="badge_water.png"><span>Water Saver</span></div>
-        <div class="badge locked" id="badgeTree"><img src="badge_tree.png"><span>Tree Planter</span></div>
-        <div class="badge locked" id="badgeEnergy"><img src="badge_energy.png"><span>Energy Saver</span></div>
-        <div class="badge locked" id="badgeCommute"><img src="badge_commute.png"><span>Green Commuter</span></div>
-        <div class="badge locked" id="badgePlastic"><img src="badge_plastic.png"><span>Plastic-Free</span></div>
-        <div class="badge locked" id="badgeChampion"><img src="badge_champion.png"><span>Eco Champion</span></div>
-      </div>
-    </div>
   </section>
 </main>
-
-<footer>
-  <div class="pixel-title">GreenXP • Prototype</div>
-  <div style="font-size:12px;color:var(--muted)">Made with 🍌 by Nitin Tripathi</div>
-</footer>
 
 <script src="index.js"></script>
 </body>
